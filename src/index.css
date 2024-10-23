@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.app {
+    min-height: 100vh;
+    display: grid;
+    position: relative; /* Allow absolute positioning of child elements */
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #FF6F61, #6FA3EF, #6F61FF, #FF61A6, #FFD161);
+    background-size: 400% 400%; /* Larger area to animate */
+    animation: wave 10s ease-in-out infinite; /* Animation speed */
+    z-index: -1; /* Set behind other content */
+}
+
+@keyframes wave {
+    0% {
+        background-position: 0% 50%; /* Start position */
+    }
+    50% {
+        background-position: 100% 50%; /* Middle position */
+    }
+    100% {
+        background-position: 0% 50%; /* End position, looping back */
+    }
+}
+
+.weather {
+    place-self: center;
+    padding: 40px;
+    border-radius: 10px;
+    background-image: linear-gradient(45deg, #2f4680, #500ae4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Ensure this is above the background */
+    z-index: 1; /* Bring weather card above the animated background */
+}
+
+/* Additional styles for the weather card, search bar, and other elements go here */
